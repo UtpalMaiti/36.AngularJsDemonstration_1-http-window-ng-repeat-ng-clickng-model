@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+<html ng-app="homePageApp">
+<head>
+	<title></title>
+	<meta charset="utf-8" />
+	<script src="Scripts/angular.js"></script>
+	<script src="Scripts/homePageAppScripts.js"></script>
+</head>
+<body ng-controller="testController">
+	<h2>Welcome to HomePage...</h2>
+	<h2>Employee List...</h2>
+	<table>
+		<thead>
+			<tr>
+				<th>Id</th>
+				<th>Name</th>
+				<th>Location</th>
+				<th>Qualification</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="emp in employeeList">
+				<td>{{emp.Id}}</td>
+				<td>{{emp.Name}}</td>
+				<td>{{emp.Location}}</td>
+				<td>{{emp.Qualification}}</td>
+			</tr>
+		</tbody>
+	</table>
+	<h2>Understanding Basics of AngularJs...</h2>
+	<h2>Country List...</h2>
+	<ul>
+		<li ng-repeat="c in countryList_1">{{c.Name}}</li>
+	</ul>
+	<p>
+		<label>Gender : </label>
+		<input type="radio" ng-model="gender" value="Male" name="Gender" /> M
+		<input type="radio" ng-model="gender" value="Female" name="Gender" /> F
+	</p>
+	<button ng-click="testClick()">Select</button>
+	<p>
+		<label>
+			Country : 
+			<select ng-model="selectedCountry" ng-options="c for c in countryList" 
+					ng-change="onCountryChange()">
+				<option value="">---Select---</option>
+			</select>
+		</label>
+	</p>
+	<!--<p>
+		<label>
+			Country :
+			<select ng-model="selectedCountry_1" ng-options="c.Name for c in countryList_1"
+					ng-change="onCountryChange_1()">
+				<option value="">---Select---</option>
+			</select>
+		</label>
+	</p>-->
+	<!--<p>
+		<label>
+			Country :
+			<select ng-model="selectedCountry_1" ng-options="c.Id as c.Name for c in countryList_1"
+					ng-change="onCountryChange_1()">
+				<option value="">---Select---</option>
+			</select>
+		</label>
+	</p>-->
+	<p>
+		<label>
+			Country :
+			<select ng-model="selectedCountry_1" 
+					ng-change="onCountryChange_1()">
+				<option value="">---Select---</option>
+				<option ng-repeat="c in countryList_1" value="{{c.Id}}">{{c.Name}} ({{c.Id}})</option>
+			</select>
+		</label>
+	</p>
+</body>
+</html>

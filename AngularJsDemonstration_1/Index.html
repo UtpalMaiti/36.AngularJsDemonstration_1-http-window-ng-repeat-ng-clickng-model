@@ -1,0 +1,21 @@
+﻿<!DOCTYPE html>
+<html ng-app="testApp">
+<head>
+	<title></title>
+	<meta charset="utf-8" />
+	<script src="Scripts/angular.js"></script>
+	<script src="Scripts/testAppScripts.js"></script>
+</head>
+<body ng-controller="loginController">
+	<h2>Welcome to AngularJs 1.x</h2>
+	<h3>AngularJs is an MVC Based Web Application Framework...</h3>
+	<label>{{2+3}}</label>
+	<p>
+		<label>UserName : <input type="text" ng-model="loginInfo.UserName" /></label>
+	</p>
+	<p>
+		<label>PassWord : <input type="text" ng-model="loginInfo.PassWord" /></label>
+	</p>
+	<button ng-click="onLogIn()">LogIn</button>
+</body>
+</html>
